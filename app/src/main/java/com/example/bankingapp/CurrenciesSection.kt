@@ -77,7 +77,7 @@ val currencies = listOf(
 @Preview
 @Composable
 fun CurrenciesSection() {
-    var isVisible by remember { mutableStateOf(!false) }
+    var isVisible by remember { mutableStateOf(false) }
     var iconState by remember { mutableStateOf(Icons.Rounded.KeyboardArrowUp) }
     Box(
         modifier = Modifier
