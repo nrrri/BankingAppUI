@@ -104,10 +104,10 @@ fun CurrenciesSection() {
                     .background(MaterialTheme.colorScheme.secondary)
                     .clickable {
                         isVisible = !isVisible
-                        if (isVisible) {
-                            iconState = Icons.Rounded.KeyboardArrowUp
+                        iconState = if (isVisible) {
+                            Icons.Rounded.KeyboardArrowUp
                         } else {
-                            iconState = Icons.Rounded.KeyboardArrowDown
+                            Icons.Rounded.KeyboardArrowDown
                         }
                     }
                 ) {
@@ -150,7 +150,7 @@ fun CurrenciesSection() {
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(horizontal =  16.dp)
+                            .padding(horizontal = 16.dp)
                     ) {
                         Spacer(modifier = Modifier.height(16.dp))
                         Row(modifier = Modifier.fillMaxWidth()) {
@@ -204,8 +204,9 @@ fun CurrencyItem(index: Int, width: Dp) {
         verticalAlignment = Alignment.CenterVertically
     ) {
 
-        Row(modifier = Modifier.width(width),
-verticalAlignment = Alignment.CenterVertically
+        Row(
+            modifier = Modifier.width(width),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Box(
                 modifier = Modifier
@@ -231,26 +232,26 @@ verticalAlignment = Alignment.CenterVertically
             )
         }
 
-            Text(
-                modifier = Modifier
-                    .width(width)
-                    .padding(start = 10.dp),
-                text = "${currency.buy}",
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
-                color = MaterialTheme.colorScheme.onBackground,
-                textAlign = TextAlign.End
-            )
+        Text(
+            modifier = Modifier
+                .width(width)
+                .padding(start = 10.dp),
+            text = "${currency.buy}",
+            fontWeight = FontWeight.Bold,
+            fontSize = 16.sp,
+            color = MaterialTheme.colorScheme.onBackground,
+            textAlign = TextAlign.End
+        )
 
-            Text(
-                modifier = Modifier
-                    .width(width)
-                    .padding(start = 10.dp),
-                text = "${currency.sell}",
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
-                color = MaterialTheme.colorScheme.onBackground,
-                textAlign = TextAlign.End,
-            )
-        }
+        Text(
+            modifier = Modifier
+                .width(width)
+                .padding(start = 10.dp),
+            text = "${currency.sell}",
+            fontWeight = FontWeight.Bold,
+            fontSize = 16.sp,
+            color = MaterialTheme.colorScheme.onBackground,
+            textAlign = TextAlign.End,
+        )
     }
+}
